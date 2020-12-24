@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"net/http"
 )
@@ -14,5 +15,6 @@ func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/health-check", HealthCheckHandler)
+	fmt.Println("test habib")
 	http.ListenAndServe(":8080", nil)
 }
